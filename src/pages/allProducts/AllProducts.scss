@@ -1,0 +1,11 @@
+.allProducts{
+    padding: 50px 0 150px 0;
+    .products__title{
+        button{
+            display: none;
+        }
+    }
+    .products__btn {
+            display: none !important;
+    }
+}

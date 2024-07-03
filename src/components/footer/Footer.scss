@@ -1,0 +1,56 @@
+footer{
+    padding: 79px 0;
+    background: #F2F2F2;
+    .footer__content{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 150px;
+    }
+    .footer__card{
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 35px;
+        width: 201px;
+        .logo{
+            h2{
+                font-family: Manrope;
+                font-size: 40px;
+                font-weight: 400;
+                line-height: 48.41px;
+                text-align: left;
+            }
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        h2{
+            font-family: Manrope;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 32.78px;
+            color: #454545;
+        }
+        a{
+            font-family: Manrope;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 21.86px;
+            color: #454545;
+            opacity: 50%;
+        }
+        span{
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        h5{
+            border: 1px solid  #454545;
+            padding: 10px;
+            opacity: 70%;
+            border-radius: 50%;
+        }
+    }
+}

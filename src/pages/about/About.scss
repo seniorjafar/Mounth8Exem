@@ -1,0 +1,98 @@
+.about{
+    padding: 100px 0; 
+    .about__title{
+        span{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+            a{
+                color: #454545;
+                opacity: 30%;
+            }
+        }
+        h2{
+            font-family: Manrope;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 70.4px;
+            margin: 36px 0;
+        }
+    }
+    .about__content{
+        display: flex;
+        justify-content: space-between;
+        .about__left{
+            display: flex;
+            margin-top: 36px;
+            flex-direction: column;
+            gap: 20px;
+            .about__card{
+                width: 530px;
+                height: 253px;
+                background: #F2F2F2;
+                padding: 32px;
+                border-radius: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                h1{
+                    font-family: Manrope;
+                    font-size: 64px;
+                    font-weight: 700;
+                    line-height: 70.4px;
+                    color: #454545;
+                }
+                p{
+                    font-family: Manrope;
+                    font-size: 24px;
+                    font-weight: 500;
+                    line-height: 36px;
+                    color: #454545;
+
+                }
+            }
+        }
+        .about__right{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            margin-top: -80px;
+            p{
+                max-width: 640px;
+                font-family: Manrope;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 30px;
+                color: #454545;
+            }
+        }
+    }
+}
+
+
+@media (max-width:1000px) {
+    .about__content{
+        flex-direction: column;
+        gap: 200px;
+    }
+   
+
+}
+
+@media (max-width:600px) {
+    .about__card{
+        width: 328px !important; 
+
+    }
+    .about__title{
+        h2{
+            font-size: 28px !important;
+        }
+    }
+    .about__right{
+        p{
+            font-size: 16px !important;
+        }
+    }
+}

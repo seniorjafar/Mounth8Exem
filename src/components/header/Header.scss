@@ -1,0 +1,268 @@
+header{
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 5;
+    .nav__top{
+        .media-btn{
+            display: none;
+            button{
+                padding: 12px 28px;
+                border-radius:50px;
+                display: flex;
+                align-items: center;
+                background-color: #454545;
+                color: #fff;
+                gap: 10px;
+                border: 1px solid #454545;
+                transition: .3s;
+                svg{
+                    font-size: 25px;
+                }
+                font-family: Manrope;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 21.86px;
+            }
+            button:hover{
+                background-color: #fff;
+                color: #454545;
+                border: 1px solid #454545;
+            }
+
+
+        }
+        ul{
+            display: flex;
+            justify-content: space-between !important;
+            .links{
+                display: flex;
+                gap: 27px;
+                a.active{
+                    opacity: 1;
+                }
+            }
+            a{
+                font-family: Manrope;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 19.12px;
+                color: #454545;
+                opacity: 50%;
+            }
+        }
+        .top__tel{
+            display: flex;
+            gap: 24px;
+            a{
+                font-family: Manrope;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 19.12px;
+                color: #454545;
+                opacity: 50%; 
+            }
+        }
+    }
+    .nav__bottom{
+        display: flex;
+        margin-top: 20px;
+        justify-content: space-between;
+        .nav__logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav__inp{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            button{
+                padding: 12px 28px;
+                border-radius:50px;
+                display: flex;
+                align-items: center;
+                background-color: #454545;
+                color: #fff;
+                gap: 10px;
+                border: 1px solid #454545;
+                transition: .3s;
+                svg{
+                    font-size: 25px;
+                }
+                font-family: Manrope;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 21.86px;
+            }
+            button:hover{
+                background-color: #fff;
+                color: #454545;
+                border: 1px solid #454545;
+            }
+            .inp{
+                border: 1px solid #454545;
+                width: 626px;
+                border-radius: 50px;
+                display: flex;
+                align-items: center;
+                padding: 12px 24px;
+                input{
+                    flex: 1;
+                    border: none;
+                    outline: none;
+                }
+                svg{
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .nav__icons{
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            span{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+               a{
+                color: #454545;
+                font-family: Manrope;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 16.39px;
+               }
+               svg{
+                font-size: 20px;
+               }
+            }
+        }
+    }
+
+
+    .media__inp{
+        border: 1px solid #454545;
+        max-width: 626px;
+        border-radius: 50px;
+        display: none;
+        align-items: center;
+        padding: 12px 24px;
+        margin-top: 20px;
+        input{
+            flex: 1;
+            border: none;
+            outline: none;
+        }
+    }
+    .burger{
+        display: none;
+        svg{
+            font-size: 28px;
+            margin-right: 10px;
+        }
+    }
+    .nav__logo{
+        a {
+            display: flex;
+            color: #454545;
+            gap: 10px;
+        }
+    }
+}
+
+
+
+@media (max-width:1250px) {
+    
+    .nav__inp{
+        display: none !important;
+    }
+    .media__inp{
+        display: flex !important;
+        
+    }
+    .nav__bottom{
+        display: flex;
+        justify-content: flex-start !important;
+        gap: 50px;
+    }
+}
+
+@media (max-width:850px) {
+    .nav__top ul{
+        z-index: 10;
+        padding: 24px;
+        position: absolute;
+        top: 81px;
+        left: 0;    
+        width: 100%;
+        background: white;
+        box-shadow: 0 3px 5px #0002;
+        flex-direction: column;
+        gap: 20px !important;
+        justify-content: center;
+        align-items: center;
+        transition: .3s ease;
+        transform-origin: top;
+        transform: scaleY(0);
+        .links{
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            text-align: center;
+            padding-bottom: 10px;
+            a{
+                padding-bottom: 10px;
+                border-bottom: 1px solid #000;
+                width: 100%;
+
+            }
+        }
+        .top__tel{
+            flex-direction: column;
+        }
+    }
+}
+
+
+@media (max-width:500px) {
+    .nav__top{
+        .media-btn{
+            display: flex !important;
+        }
+        ul.show {
+            transform: scaleY(1);
+        }
+    }
+    .nav__icons{
+        gap: 15px !important;
+        span:nth-child(2) {
+            display: none !important;
+        }
+        span{
+            p{
+                display: none;
+            }
+            svg{
+                font-size: 30px !important;
+            }
+        }
+    }
+    .burger{
+        display: flex !important;
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+    }
+    .nav__bottom{
+        gap:20px;
+    }
+}
+
+

@@ -1,0 +1,239 @@
+.single{
+    padding: 150px 0;
+    .single__content{
+        display: flex;
+        .single__left{
+            img{
+                max-width: 650px;
+                height: 600px;
+                object-fit: contain;
+            }
+        }
+        .single__right{
+            h1{
+                font-family: Manrope;
+                font-size: 40px;
+                font-weight: 500;
+                line-height: 44px;
+            }
+            .price{
+                display: flex;
+                margin-top: 40px;
+                gap: 16px;
+                align-items: center;
+                h1{
+                    font-family: Inter;
+                    font-size: 40px;
+                    font-weight: 500;
+                    line-height: 64px;
+                    letter-spacing: 0.01em;
+                }
+                p{
+                    font-family: Inter;
+                    font-size: 18px;
+                    font-weight: 500;
+                    line-height: 28.8px;
+                    letter-spacing: 0.01em;
+                    color: #B3B3B3;
+                    text-decoration: line-through;
+                }
+            }
+            .desc{
+                margin-top: 40px;
+                p{
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 25.6px;
+                    text-align: left;
+                    color: #4C4C4C;
+
+                }
+                .count{
+                    display: flex;
+                    align-items: center;
+                    width: 150px;
+                    padding: 15px;
+                    border-radius: 10px;
+                    justify-content: center;
+                    gap: 32px;
+                    border: 1px solid #E5E5E5;
+                    svg{
+                        cursor: pointer;
+                        font-size: 18px;
+                        color: #4C4C4C;
+                        opacity: 90%;
+                    }
+                    svg:active{
+                        transform: scale(.95);
+                    }
+                }
+                .btns{
+                    display: flex;
+                    gap: 16px;
+                    margin-top: 48px;
+                    align-items: center;
+                }
+                .cart__btn{
+                    background-color: #4C4C4C;
+                    color: #fff;
+                    padding: 18px 50px;
+                    border-radius: 10px;
+                    border: 1px solid #4C4C4C;
+                    transition: .3s;
+                }
+                .cart__btn:hover{
+                     background-color: #fff;
+                     color: #4C4C4C;
+                     border: 1px solid #4C4C4C;
+                 }
+                 .cart__btn:active{
+                      transform: scale(0.95);
+                  }
+
+            }
+            .heart{
+                border: none;
+                border-radius: 6px;
+                display: flex;
+                padding: 5px;
+                justify-content: center;
+                svg{
+                    font-size: 42px;
+                }
+            }
+            .scot{
+                display: flex;
+                margin-top: 40px;
+                gap: 250px;
+                p{
+                    font-family: Inter;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 22.4px;
+                    color: #B3B3B3;
+                    margin-bottom: 12px;
+                }
+                h5{
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 25.6px;
+                    color: #4D932C;
+
+                }
+                .icons{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                    .icon{
+                        background: #E5E5E5;
+                        color: #fff;
+                        width: 45px;
+                        height: 45px;
+                        justify-content: center;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        padding: 10px;
+                        transition: .2s;
+                        svg{
+                            font-size: 30px !important;
+                        }
+                    }
+                    .icon:hover{
+                        background-color: #4C4C4C;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .skils{
+        margin-top: 181px;
+        h1{
+            font-family: Manrope;
+            font-size: 40px;
+            font-weight: 500;
+            line-height: 44px;
+        }
+        .skills__content{
+            margin-top: 23px;
+            .skills__card:nth-child(even){
+                background-color: #F8F8F8;
+            }
+            .skills__card{
+                display: flex;
+                padding: 28px 24px;
+                align-items: center;
+                border-radius: 20px;
+                justify-content: space-between;
+                p{
+                    font-family: Inter;
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 19.68px;
+                    text-align: left;
+                    max-width: 600px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media (max-width: 1180px) {
+    .single__right{
+        .scot{
+            gap: 50px !important;
+        }
+    }
+}
+@media (max-width: 960px) {
+    .single__content{
+        flex-direction: column;
+    }
+}
+@media (max-width:600px) {
+    .single{
+        padding: 0 !important;
+    }
+    .single__content{
+        .single__left img{
+            width: 328px;
+            height: 328px;
+            object-fit: contain;
+        }
+        .scot{
+            gap: 20px !important;
+            .icons{
+                .icon{
+                    width: 30px !important;
+                    height: 30px !important;
+                }
+                svg{
+                    font-size: 20px !important;
+                }
+            }
+            
+        }
+        .btns{
+            .cart__btn{
+                display: none !important;
+            }
+        }
+    }
+    .skills__card{
+        p{
+            width: 125px;
+        }
+        p:nth-child(even){
+            color: #4C4C4C !important;
+            opacity: 50%;
+        }
+    }
+}

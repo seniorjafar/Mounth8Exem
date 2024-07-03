@@ -1,0 +1,243 @@
+.products{
+    .product__btn{
+        display: flex ;
+        opacity: 0;
+    }
+    .product__categorys{
+        display: flex;
+        gap: 50px;
+        margin: 50px 0;
+        justify-content: center;
+        button{
+            padding: 10px 30px;
+            border-radius: 100px;
+            background-color: #454545;
+            color: #fff;
+            border: 1px solid #454545;
+            transition: .3s;
+        }
+        button:hover{
+            background-color: #fff;
+            color: #454545;
+            border: 1px solid #454545;
+        }
+        button:active{
+            transform: scale(0.9);
+        }
+    }
+    .products__title{
+        margin: 70px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h2{
+            font-family: Manrope;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 54.64px;
+        }
+        button{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid #454545;
+            font-family: Manrope;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 21.86px;
+            text-align: left;
+            padding: 12px 48px;
+            border-radius: 100px;
+            background-color: #fff;
+            transition: .3s;
+        }
+        button:hover{
+            background-color: #454545;
+            color: #fff;
+            border: 1px solid #454545;
+        }
+        button:active{
+            transform: scale(0.95);
+        }
+    }
+    .product__cards{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        gap: 10px;
+        row-gap: 40px;
+        .products__item{
+            max-width: 326px;
+            transition: .3s;
+            .imgp{
+                padding: 11px 85px 0 65px !important;
+                display: flex;
+                align-items: center;
+                button{
+                    position: relative;
+                    right: -50px;
+                    top: -90px;
+                    border: none;
+                    background-color: transparent;
+                    svg{
+                        font-size: 24px;
+                    }
+                }
+                img{
+                    max-width: 173px;
+                    height: 216px;
+                    cursor: pointer;
+                    object-fit: contain;
+                }
+               
+            }
+            .pro__prag{
+                padding: 0 22px;
+                margin-top: 32px;
+                h3{
+                    font-family: Manrope;
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 22px;
+                    color: #454545;
+                }
+                .price{
+                    margin-top: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    
+                    p{
+                        text-decoration: line-through;
+                        font-family: Manrope;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 13.2px;
+                        text-align: left;
+                        color: #9F9F9F;
+                    }
+                    h3{
+                        font-family: Manrope;
+                        font-size: 20px;
+                        font-weight: 700;
+                        line-height: 22px;
+                        color: #454545;
+                        margin-top: 6px;
+                    }
+                    button{
+                        padding: 8px 20px;
+                        background-color: #454545;
+                        border-radius: 100px;
+                        border: 1px solid #454545;
+                        svg{
+                            color: #fff;
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+        }
+        .products__item:hover{
+            transform: scale(1.02);
+            transition: .3s;
+        }
+    }
+
+}
+
+
+@media (max-width:1300px) {
+    .product__cards{
+        grid-template-columns: repeat(3 , 1fr) !important;
+    }
+}
+
+@media (max-width:1000px) {
+    .product__cards{
+        grid-template-columns: repeat(2, 1fr) !important;
+        row-gap: 80px !important;
+    }
+    
+}
+@media (max-width:700px) {
+    .products__title{
+        button{
+            display: none !important;
+        }
+        h2{
+            font-size: 28px !important;
+        }
+    }
+    .product__categorys{
+        display: none !important;
+    }
+    .products__item{
+        width: 160px !important;
+        h3{
+            font-size: 16px !important;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 1; /* Faqat bitta qatorda ko'rsatish */
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+        }
+        img{
+            width: 96px !important;
+            height: 126px !important;
+            object-fit: contain !important;
+        }
+        .imgp{
+            padding: 11px 85px 0 15px !important;
+            justify-content: start !important;
+            .imgp2{
+                padding: 0px 0px 0 0px !important;
+                margin-left: -30px;
+            }
+            button{
+                position: relative;
+                right: 0px !important;
+                top: -40px;
+            }
+        }
+    }
+    .product__btn{
+        align-items: center;
+        opacity: 1 !important;
+        margin: 50px 0;
+        button{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                border: 1px solid #454545;
+                font-family: Manrope;
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 21.86px;
+                text-align: left;
+                padding: 12px 48px;
+                border-radius: 100px;
+                background-color: #fff;
+                transition: .3s;
+            }
+            button:hover{
+                background-color: #454545;
+                color: #fff;
+                border: 1px solid #454545;
+            }
+            button:active{
+                transform: scale(0.95);
+            }
+    }
+}
+
+
+.detail{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img{
+        max-width: 400px;
+        height: 400px;
+        object-fit: contain;
+    }
+}

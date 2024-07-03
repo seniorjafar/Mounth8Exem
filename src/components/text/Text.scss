@@ -1,0 +1,49 @@
+.text{
+    display: flex;
+    padding: 100px 0;
+    .text__content{
+        display: flex;
+        gap: 330px;
+    }
+    h1{
+        font-family: Manrope;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 54.64px;
+        max-width: 330px;
+    }
+    p{
+        max-width: 640px;
+        font-family: Manrope;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 30px;
+        color: #454545;
+        margin-bottom: 30px;
+    }
+    h2{
+        display: none;
+    }
+}
+
+@media (max-width:1000px) {
+    .text__content{
+        gap: 150px !important;
+    }
+}
+@media (max-width:800px) {
+    .text__content{
+        gap: 150px !important;
+        flex-direction: column;
+        h2{
+            display: flex !important;
+            font-family: Manrope;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 38.25px;
+        }
+        h1{
+            display: none;
+        }
+    }
+}

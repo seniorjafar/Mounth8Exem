@@ -1,0 +1,50 @@
+.brends{
+    .brends__title{
+        margin: 70px 0;
+        h2{
+            font-family: Manrope;
+            font-size: 40px;
+            font-weight: 700;
+            line-height: 54.64px;
+        }
+    }
+    .brends__card{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        gap: 20px;
+    }
+    .brends__cards{
+        .mySwiper{
+           display: none ;
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+    .brends__card{
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+@media (max-width: 1000px) {
+    .brends__card{
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+@media (max-width: 600px) {
+   .brends__cards{
+    .brends__card{
+        display: none !important;
+    }
+        .mySwiper{
+           display: flex !important ;
+           justify-content: center;
+           width: 100%;
+           margin: 50px auto ; 
+           img{
+            margin: 0 auto !important;
+            width: 100%;
+           }
+           
+        }
+    }
+}

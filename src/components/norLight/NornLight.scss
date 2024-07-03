@@ -1,0 +1,58 @@
+.nornlight{
+    .nornlight__title{
+        margin: 50px 0;
+    }
+    .nornlight__cards{
+        display: grid;
+        grid-template-columns: repeat(4 , 1fr);
+        gap: 18px;
+        margin: 50px 0;
+        .nornlight__card{
+            max-width: 312px;
+            padding: 16px;
+            transition: .3s;
+            border: 1px solid #D9D9D9;
+            border-radius: 4px;
+            h3{
+                font-family: Manrope;
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 26px;
+                margin-top: 79px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-family: Manrope;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 20.8px;
+                color: #454545;
+                opacity: 50%;
+            }
+                .xz2{
+                    background-color: #454545 !important;
+                    padding: 10px;
+                    border-radius: 10px;
+                }
+        }
+        .nornlight__card:hover{
+            transform: scale(1.03);
+        }
+    }
+}
+
+
+
+@media (max-width:1250px) {
+    .nornlight__cards{
+        grid-template-columns: repeat(3 , 1fr) !important;
+    }
+}
+
+@media (max-width:1000px) {
+    .nornlight__cards{
+        grid-template-columns: repeat(2 , 1fr) !important;
+    }
+}
+
+
