@@ -37,7 +37,7 @@ import { useNavigate } from 'react-router-dom';
   }
 
   let products__category = categorys?.map(category => (
-    <button className='category__btn' key={category.id}>{category.category}</button>
+    <button className='category__btn' key={category.id}>{category.title}</button>
   ))
 
   let products = data?.slice(0, sliceCount).map(product => (

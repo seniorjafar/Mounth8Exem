@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import './ShippingAndPayment.scss';
 
 const ShippingAndPayment = () => {
+  // URL карты Google Maps
+  const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2240.472414241399!2d37.56295731590789!3d55.85773798058244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b5379c2d1e7f6f%3A0x5e3c2b8ca5c4150!2z0JTQvNC40YLRgNC-0LLRgdC60L7QtSDRiC4sIDEwMNGBMiwg0JzQvtGB0LrQstCwLCAxMjc1NzQ!5e0!3m2!1sru!2sru!4v1625584362550!5m2!1sru!2sru";
+
   return (
     <>
       <div className="payment">
@@ -33,14 +36,16 @@ const ShippingAndPayment = () => {
             </div>
           </div>
         </div>
-          <iframe
-            allowFullScreen=""
-            frameBorder={0}
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.0730692531147!2d69.2012376766596!3d41.28551417131297!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8ba578f4f58d%3A0xd7a2ecf23413b7a0!2sNajot%20Ta&#39;lim%20Chilonzor%20Filial!5e0!3m2!1sru!2s!4v1719839644954!5m2!1sru!2s"
-            style={{ border: '0' }}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        <iframe
+          src={mapUrl}
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Карта местоположения магазина"
+        ></iframe>
       </div>
     </>
   );
