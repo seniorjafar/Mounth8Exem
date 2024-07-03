@@ -15,6 +15,7 @@ const Katalog = () => {
           <div className="container">
              <div className="katalog__title">
                  <h2>Каталог</h2>
+                 
                  <button>Весь каталог <FaArrowRight />
                  </button>
              </div>
