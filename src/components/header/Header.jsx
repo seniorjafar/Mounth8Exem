@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Header.scss'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/image/logo.png'
+import { useGetProductsQuery } from '../../context/api/productApi'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch , CiHeart , CiShoppingCart} from "react-icons/ci";
 import { TbAntennaBars5 } from "react-icons/tb";
@@ -9,6 +10,43 @@ import { useLocation } from "react-router-dom";
 
 
 const Header = () => {
+ 
+
+
+
+  const [searchValue , setSearchValue] = useState("")
+  const [filterData, setFilterData] = useState(null)
+
+
+  const {data} = useGetProductsQuery()
+  
+
+useEffect(() => {
+  console.log('Effect triggered. SearchValue:', searchValue, 'Data:', data);
+  if(data){
+    const filtered = data.filter(product => product.title.toLowerCase().includes(searchValue.toLowerCase()));
+    console.log('Filtered data:', filtered);
+    setFilterData(filtered);
+  }
+}, [searchValue, data])
+
+
+
+  const handleClear = () => {
+    console.log('Clearing search');
+    setSearchValue("")
+  }
+
+
+const searchItems = filterData?.map(product => (
+  <Link onClick={() => {
+    console.log('Link bosildi');
+    handleClear();
+  }} key={product.id} to={`/products/${product.id}`}>
+    <img src={product.url[0]} alt="" />
+    <p>{product.title}</p>
+  </Link>
+))
 
   let [burger, setBurger] = useState(false)
 
@@ -65,9 +103,19 @@ const Header = () => {
                 <div className="nav__inp">
                    <button><RxHamburgerMenu />
                    Каталог</button>
-                   <div className="inp">
-                      <input type="text" placeholder="Поиск по товарам" />
-                      <CiSearch />
+                   <div className='inp__content'>
+                    <div className="inp">
+                        <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder="Поиск по товарам" />                 <CiSearch />
+                    </div>
+                    {
+    searchValue.trim() ?
+    <div className="inp__modul">
+      {searchItems}
+    </div>
+    :
+    <></>
+  }
+
                    </div>
                 </div>
                 <div className="nav__icons">
@@ -92,9 +140,24 @@ const Header = () => {
                 </div>
               </div>
               <div className="media__inp">
-                 <input type="text" placeholder='Поиск по товарам' />
-                 <CiSearch />
-              </div>
+                {/* <div className="inp__content"> */}
+                  <span className='inp__span'>
+                    <input value={searchValue} onChange={(e) => setSearchValue(e.target.value)} type="text" placeholder='Поиск по товарам' />
+                    <CiSearch />
+                  </span>
+                  {
+                        searchValue.trim() ?
+                      <div className="inp__modul">
+                        {
+                          searchItems
+                        }
+                      </div>
+                        :
+                      <></>
+                      }
+                  </div>
+              {/* </div> */}
+              
           </div>
       </div>
     </header>

@@ -17,13 +17,13 @@ function Managecategory() {
       <p>{el.title}</p>
       <div className="manageCategory2">
         <img
-          style={{ cursor: "pointer" }}
+          style={{ marginRight: "10px", cursor: "pointer",border:'1px solid black', padding: "5px 11px",borderRadius:'15px'}}
           onClick={() => setEditCategory(el)}
           src={editadmin}
           alt=""
         />
         <img
-          style={{ cursor: "pointer",background:"black" }}
+          style={{cursor: "pointer",  background:"black",padding: "8px 15px",borderRadius:'15px' }}
           onClick={() => deleteCategory(el.id)}
           src={deleteadmin}
           alt=""

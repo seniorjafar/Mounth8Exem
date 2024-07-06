@@ -232,12 +232,31 @@
 
 
 .detail{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
+    padding: 10px;
+  
     img{
+        display: grid;
+        justify-content: center;
         max-width: 400px;
         height: 400px;
         object-fit: contain;
+        margin-bottom: 30px;
+    }
+    button{
+        width: 100%;
+        margin-left: 0 auto;
+        margin-right: 0 auto;
+        padding: 10px;
+        color: #fff;
+        background: rgb(67, 66, 66);
+        border: none;
+        border-radius: 17px;
+    }
+    button:hover{
+        background: #fff;
+        color: rgb(67, 66, 66);
+        border: 1px solid rgb(67, 66, 66);
+        padding: 9px;
     }
 }

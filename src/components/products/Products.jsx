@@ -120,7 +120,7 @@ import { useNavigate } from 'react-router-dom';
           <Modul close={closeDetail}>
               <div className='detail'>
                 <img src={model?.url[1]  } alt="" />
-                <button onClick={() => navigate(`/products/${model.id}`)}>see-More</button>
+                <button onClick={() => navigate(`/products/${model.id}`)}>More</button>
               </div>
           </Modul>
           :

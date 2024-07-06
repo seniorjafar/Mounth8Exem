@@ -75,10 +75,45 @@ header{
             align-items: center;
             gap: 10px;
         }
+        .inp__content{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        .inp__modul{
+            position: absolute;
+            width: 100%;
+            top: calc(100% + 1px);
+            height: 200px ;
+            overflow-y: auto;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scrollbar-width: none;
+            a{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 22px;
+                color: #454545;
+                border-bottom: 1px solid #b4b4b4;
+                padding-bottom: 5px;
+            }
+            img{
+                width: 45px;
+                height: 45px;
+                object-fit: contain;
+                border-radius: 4px;
+            }
+        }
+    }
         .nav__inp{
             display: flex;
             align-items: center;
             gap: 12px;
+        
             button{
                 padding: 12px 28px;
                 border-radius:50px;
@@ -147,16 +182,56 @@ header{
 
     .media__inp{
         border: 1px solid #454545;
-        max-width: 626px;
+        max-width: 526px;
         border-radius: 50px;
         display: none;
         align-items: center;
         padding: 12px 24px;
         margin-top: 20px;
+        .inp__span{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            svg{
+                
+            }
+        }
         input{
             flex: 1;
             border: none;
             outline: none;
+        }
+        .inp__modul{
+            position: absolute;
+            width: 80%;
+            top: calc(100% + 1px);
+            // left: -10px;
+            // right: -10px;
+            height: 200px ;
+            overflow-y: auto;
+            border-radius: 20px;
+            background-color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            scrollbar-width: none;
+            a{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 22px;
+                color: #454545;
+                border-bottom: 1px solid #b4b4b4;
+                padding-bottom: 5px;
+            }
+            img{
+                width: 45px;
+                height: 45px;
+                object-fit: contain;
+                border-radius: 4px;
+            }
         }
     }
     .burger{
