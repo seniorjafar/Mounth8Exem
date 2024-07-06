@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ProductImg from "../../assets/image/kat1.png";
+
 import { NavLink } from "react-router-dom";
 import deleteadmin from "../../assets/icon/delet.svg";
 import editadmin from "../../assets/icon/edit.svg";
@@ -17,24 +17,24 @@ function Product({ data, isLoading }) {
   let Products = data?.map((products) => (
     <div key={products.id} className="d1">
       <NavLink to={`/product/${products.id}`}>
-        <img width={290} height={290} src={products.url[1]} alt="" />
+        <img width={290} height={290} src={products.url[0]} alt="" />
       </NavLink>
       <h1>{products.title}</h1>
-      <div className="d2">
+      <div className="d2" style={{display:'flex', justifyContent:'space-between'}}>
         <div>
-          <del>{Math.round(+products.price + 10)}$</del>
-          <p>{products.price}$</p>
+          <del style={{color:'grey'}}>{Math.round(+products.price + 10)}$</del>
+          <p style={{fontSize:'30px'}}>{products.price}$</p>
         </div>
         <div>
           <img
             onClick={() => setEditProduct(products)}
-            style={{ marginRight: "10px", cursor: "pointer",}}
+            style={{ marginRight: "10px", cursor: "pointer",border:'1px solid black', padding: "5px 11px",borderRadius:'15px'}}
             src={editadmin}
             alt=""
           />
           <img
             onClick={() => deleteProduct(products.id)}
-            style={{ cursor: "pointer",  background:"black" }}
+            style={{ cursor: "pointer",  background:"black",padding: "8px 15px",borderRadius:'15px' }}
             src={deleteadmin}
             alt=""
           />
@@ -45,14 +45,11 @@ function Product({ data, isLoading }) {
   return (
     <>
       <div className="container">
-        <div className="d">
-          <div className={isLoading ? "loading" : "hide"}>
+        <div style={{display:"flex", flexWrap:'wrap', gap:'40px',width:'100%'}}>
+          <div  className={isLoading ? "loading" : "hide"}>
             {data?.map((load) => (
               <div key={load.id}>
-                <div className="sk1"></div>
-                <div className="sk2"></div>
-                <div className="sk3"></div>
-                <div className="sk3"></div>
+               
               </div>
             ))}
           </div>

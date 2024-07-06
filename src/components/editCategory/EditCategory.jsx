@@ -20,7 +20,7 @@ function EditCategory({ setEditCategory, editCategory }) {
   return (
     <div>
       <div onClick={() => setEditCategory(null)} className="overlayedit"></div>
-      <div style={{ height: "240px" }} className="editProduct">
+      <div style={{ height: "240px", marginLeft:"15px",border:'1px solid black', borderRadius:'10px', padding:'5px' }} className="editProduct">
         <div style={{ marginLeft: "0" }} className="create">
           <form onSubmit={handleupdate} action="">
             <p>Category</p>

@@ -4,12 +4,10 @@ import { useGetCategoryQuery } from "../../context/api/categoryApi";
 import { useUpdateProductMutation } from "../../context/api/productApi";
 import { toast } from "react-toastify";
 function EditProduct({ editProduct, setEditProduct }) {
-  const { data } = useGetCategoryQuery();
-  let Category = data?.map((option) => (
-    <option key={option.id} value={option.Category}>
-      {option.Category}
-    </option>
-  ));
+  const { data : categorys } = useGetCategoryQuery();
+  let category_edit = categorys?.map(category => (
+    <option key={category.id}>{category.title}</option>
+  ))
   let [update, { isLoading, isSuccess }] = useUpdateProductMutation();
   useEffect(() => {
     if (isSuccess) {
@@ -18,20 +16,27 @@ function EditProduct({ editProduct, setEditProduct }) {
     }
   }, [isSuccess]);
   const handleupdate = (e) => {
-    e.preventDefault();
-    let Product = {
-      title: editProduct.title,
-      description: editProduct.description,
-      price: editProduct.price,
-      category: editProduct.category,
-      image: editProduct.image,
-    };
-    update({ body: Product, id: editProduct.id });
+  e.preventDefault();
+  let Product = {
+    title: editProduct.title,
+    description: editProduct.description,
+    price: editProduct.price,
+    category: editProduct.category,
+    url: editProduct.url[0],
   };
+  update({ body: Product, id: editProduct.id });
+  const { name, value } = e.target;
+  setFormData({
+    ...formData,
+    [name]: name === "url" ? value : e.target.value,
+  });
+};
+
+
   return (
     <div>
       <div onClick={() => setEditProduct(null)} className="overlayedit"></div>
-      <div className="editProduct">
+      <div className="editProduct" style={{zIndex:'-0'}}>
         <div style={{ marginLeft: "0" }} className="create">
           <form onSubmit={handleupdate} action="">
             <p>Title</p>
@@ -57,14 +62,15 @@ function EditProduct({ editProduct, setEditProduct }) {
             />
             <p>Image-url</p>
             <input
-              value={editProduct.image}
-              onChange={(e) =>
-                setEditProduct((prev) => ({ ...prev, image: e.target.value }))
-              }
-              readOnly
-              type="text"
-              name="image"
-            />
+  value={editProduct.url[0] || ""} // agar massiv bo'sh bo'lsa, bo'sh qator ko'rsatiladi
+  onChange={(e) =>
+    setEditProduct((prev) => ({ ...prev, url: [e.target.value] }))
+  }
+  readOnly
+  type="text"
+  name="url"
+/>
+
             <p>Category</p>
             <select
               value={editProduct.category}
@@ -79,7 +85,7 @@ function EditProduct({ editProduct, setEditProduct }) {
               id=""
             >
               <option value="">All</option>
-              {Category}
+              {category_edit}
             </select>
             <p>Desc</p>
             <textarea

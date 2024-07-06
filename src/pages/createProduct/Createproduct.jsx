@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import "./Createproduct.scss";
-import { useGetCategoryQuery } from "../../context/api/categoryApi";
 import { useGetCategorysQuery } from "../../context/api/productApi";
 import { useCreateProductMutation } from "../../context/api/productApi";
 import { useGetInputValue } from "../../hooks/useGetInputValue";
@@ -9,24 +8,27 @@ const initial = {
   title: "",
   price: "",
   description: "",
-  image:
-    "https://media.istockphoto.com/id/517188688/photo/mountain-landscape.jpg?s=1024x1024&w=0&k=20&c=z8_rWaI8x4zApNEEG9DnWlGXyDIXe-OmsAyQ5fGPVV8=",
+  url:["https://i.ibb.co/hyry0rJ/my.jpg"],
   category: "",
 };
 function Createproduct() {
-  const { data } = useGetCategoryQuery();
     const { data : categorys } = useGetCategorysQuery()
   const [createProduct, { isSuccess }] = useCreateProductMutation();
-  const { formData, handleChange, setFormData } = useGetInputValue(initial);
-  let category = data?.map((option) => (
-    <option key={option.id} value={option.Category}>
-      {option.Category}
-    </option>
-  ));
+  const { formData, setFormData } = useGetInputValue(initial);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     createProduct(formData);
   };
+  const handleChange = (e) => {
+  const { name, value } = e.target;
+  setFormData({
+    ...formData,
+    [name]: name === "url" ? value : e.target.value,
+  });
+};
+
+
   useEffect(() => {
     if (isSuccess) {
       setFormData(initial);
@@ -61,12 +63,13 @@ function Createproduct() {
         />
         <p>Image-url</p>
         <input
-          value={formData.image}
-          onChange={handleChange}
-          readOnly
-          type="text"
-          name="image"
-        />
+  value={formData.url[0] || ""} // agar massiv bo'sh bo'lsa, bo'sh qator ko'rsatiladi
+  onChange={(e) => handleChange({ target: { name: "url", value: [e.target.value] } })}
+  type="text"
+  name="url"
+/>
+
+
         <p>Category</p>
         <select
           value={formData.category}

@@ -33,7 +33,7 @@ function Login() {
         <div className="container">
           <form onSubmit={handleSubmit} action="">
             <h4>Username</h4>
-            <input
+            <input className="input_login"
               value={formData.username}
               onChange={handleChange}
               required
@@ -41,7 +41,7 @@ function Login() {
               name="username"
             />
             <h4>Password</h4>
-            <input
+            <input className="input_login"
               value={formData.password}
               onChange={handleChange}
               required
