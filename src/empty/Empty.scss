@@ -1,0 +1,20 @@
+.empty{
+    button{
+        padding: 14px;
+        width: 250px;
+        border-radius: 100px;
+        background: #454545;
+        border: 1px solid #454545;
+        color: #ffffff;
+        transition: .3s;
+        margin: 10px 0 50px 0;
+    }
+    button:hover{
+        background-color: transparent;
+        color: #454545;
+        border: 1px solid #454545;
+    }
+    button:active{
+        transform: scale(0.95);
+    }
+}

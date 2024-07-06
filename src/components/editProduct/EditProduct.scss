@@ -1,0 +1,31 @@
+.overlayedit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: #0006;
+  width: 100%;
+  z-index: 11;
+}
+.editProduct {
+  position: fixed;
+  padding: 40px;
+  top: 40%;
+  opacity: 0;
+  left: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  max-width: 800px;
+  height: 500px;
+  overflow: auto;
+  animation: Call 0.5s ease 0s forwards;
+  background: #fff;
+  z-index: 12;
+}
+@keyframes Call {
+  to {
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}

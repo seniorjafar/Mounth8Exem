@@ -5,11 +5,23 @@ import logo from '../../assets/image/logo.png'
 import { RxHamburgerMenu } from "react-icons/rx";
 import { CiSearch , CiHeart , CiShoppingCart} from "react-icons/ci";
 import { TbAntennaBars5 } from "react-icons/tb";
+import { useLocation } from "react-router-dom";
 
 
 const Header = () => {
 
   let [burger, setBurger] = useState(false)
+
+  let { pathname } = useLocation();
+  if (
+    pathname === "/admin" ||
+    pathname === "/admin/createproduct" ||
+    pathname === "/admin/manageproduct" ||
+    pathname === "/admin/managecategory" ||
+    pathname === "/admin/createcategory"
+  ) {
+    return <></>;
+  }
 
   return (
     <>
@@ -72,7 +84,7 @@ const Header = () => {
                       </Link>
                    </span>
                    <span>
-                      <Link to={'/'}>
+                      <Link to={'/cart'}>
                         <CiShoppingCart />  
                         <p>Корзина</p>
                       </Link>

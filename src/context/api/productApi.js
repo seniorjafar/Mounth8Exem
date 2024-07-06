@@ -14,7 +14,7 @@ export const productApi = api.injectEndpoints({
         url: '/category', 
         params 
       }),
-      providesTags:["Product"]
+      providesTags:["category"]
     }),
     getProductById: build.query({
       query: (id) => ({ 
