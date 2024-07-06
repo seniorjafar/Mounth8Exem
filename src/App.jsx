@@ -5,7 +5,7 @@ import SingleRout from './pages/singleRout/SingleRout'
 import AllProducts from './pages/allProducts/AllProducts'
 import Wishlist from './pages/wishlist/Wishlist'
 import About from './pages/about/About'
-import ShippingAndPayment from './pages/shippingAndPayment/ShippingAndPayment'
+import Shipping from './pages/shipping/Shipping'
 import Return from './pages/return/Return'
 import Garant from './pages/garant/Garant'
 import Contact from './pages/contact/Contact'
@@ -29,7 +29,7 @@ function App() {
          <Route path='/all-products' element={<AllProducts/>}/>
          <Route path='/wishlist' element={<Wishlist/>}/>
          <Route path='/about' element={<About/>}/>
-         <Route path='/shipping-payment' element={<ShippingAndPayment/>}/>
+         <Route path='/shipping-payment' element={<Shipping/>}/>
          <Route path='/return' element={<Return/>}/>
          <Route path='/garant' element={<Garant/>}/>
          <Route path='/contact' element={<Contact/>}/>

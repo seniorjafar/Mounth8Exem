@@ -1,7 +1,7 @@
 import React from 'react';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import './ShippingAndPayment.scss';
+import './Shipping.scss';
 
 const ShippingAndPayment = () => {
   // URL карты Google Maps

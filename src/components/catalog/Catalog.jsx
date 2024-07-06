@@ -1,12 +1,12 @@
 import React from 'react'
 import './Catalog.scss'
 import { FaArrowRight } from "react-icons/fa6";
-import kat1 from '../../assets/image/kat1.png'
-import kat2 from '../../assets/image/kat2.png'
-import kat from '../../assets/image/kat.png'
-import kat4 from '../../assets/image/kat4.png'
-import kat5 from '../../assets/image/kat5.png'
-import kat6 from '../../assets/image/kat6.png'
+import ka1 from '../../assets/image/katalog1.png'
+import ka2 from '../../assets/image/katalog2.png'
+import ka from '../../assets/image/katalog.png'
+import ka4 from '../../assets/image/katalog4.png'
+import ka5 from '../../assets/image/katalog5.png'
+import ka6 from '../../assets/image/katalog6.png'
 
 const Katalog = () => {
   return (
@@ -27,7 +27,7 @@ const Katalog = () => {
                            </div>
                            <div className="card__right">
                                 <h3>Люстры</h3>
-                               <img src={kat1} alt="" />
+                               <img src={ka1} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
@@ -38,7 +38,7 @@ const Katalog = () => {
                            </div>
                            <div className="card__right">
                                 <h3>Светильники</h3>
-                               <img src={kat2} alt="" />
+                               <img src={ka2} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
@@ -49,7 +49,7 @@ const Katalog = () => {
                            </div>
                            <div className="card__right">
                                 <h3>Бра</h3>
-                               <img src={kat} alt="" />
+                               <img src={ka} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
@@ -60,7 +60,7 @@ const Katalog = () => {
                            </div>
                            <div className="card__right">
                                  <h3>Торшеры</h3>
-                               <img src={kat4} alt="" />
+                               <img src={ka4} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
@@ -71,7 +71,7 @@ const Katalog = () => {
                            </div>
                            <div className="card__right">
                                 <h3>Настольные лампы</h3>
-                               <img src={kat5} alt="" />
+                               <img src={ka5} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
@@ -82,7 +82,7 @@ const Katalog = () => {
                            </div>
                           <div className="card__right">
                               <h3>Споты</h3>
-                               <img src={kat6} alt="" />
+                               <img src={ka6} alt="" />
                                <p>От 540₽ <FaArrowRight /></p>
                            </div>
                      </div>
